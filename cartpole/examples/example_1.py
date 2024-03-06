@@ -10,7 +10,7 @@ from utils import save_gif
 screens = []
 
 env = gym.make('CartPole-v1', render_mode="rgb_array") # env 정의 
-env.reset() # env 초기화 
+env.reset() # env 초기화
 img = plt.imshow(env.render()) # 이미지 render 
 for _ in range(100): 
     
