@@ -7,22 +7,25 @@ from utils import save_gif
 
 "for visualization"
 
-screens = []
+states = []
 
-env = gym.make('CartPole-v1', render_mode="rgb_array") # env 정의 
-env.reset() # env 초기화
-img = plt.imshow(env.render()) # 이미지 render 
+env = gym.make('CartPole-v1', render_mode="rgb_array") # env definition
+env.reset() # env initialization
+
 for _ in range(100): 
+    state = env.render() # image render
+    state
     
-    screens.append(env.render()) 
-    # display.clear_output(wait=True) 
-    # display.display(plt.gcf()) 
-
-    action = env.action_space.sample() # Take a random action
+    action = env.action_space.sample() # Take a random action # 0 or 1
     env.step(action) # env update 
+    
+    states.append(state)  # for visuliazation
+    
+# image to gif
+save_gif(states, f'./gif/example_1.gif') 
+
 env.close()
 
-# image to gif
-save_gif(screens, f'./gif/example_1.gif') 
 
+"only action"
 

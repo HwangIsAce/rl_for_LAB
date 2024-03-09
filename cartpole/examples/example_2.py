@@ -1,5 +1,7 @@
 import gym
 
+from utils import *
+
 """
 매번 임의의 action 을 하는 것보다 게임을 더 잘하고 싶다면, 우리의 action 이 게임 env 에 정확히 무엇을 하는지 이해하고 있어야 한다.
 
@@ -13,17 +15,40 @@ import gym
 
 4. info (dict): 디버깅에 유용한 진단 정보이며, 때때로 학습에 있어서 유용하다. (예를 들어, 환경의 마지막 상태 변화를 위한 확률 같은 정보가 될 수 있다.) 하지만 학습에 있어서 에이전트가 공식적인 평가에 이것을 사용할 수는 없다.
 
-기존에는 step 함수가 (observation, reward, done, info)를 반환했는데 done이 truncated, terminated 두 의미를 모두 담고 있기 때문에 
+5. 기존에는 step 함수가 (observation, reward, done, info)를 반환했는데 done이 truncated, terminated 두 의미를 모두 담고 있기 때문에 
+
 그것을 구분하기 위하여 (observation, reward, terminated, truncated, info)로 4개에서 5개로 바뀌었다. 
+
 과거의 코드에서 truncated 부분이 구현되어 있지 않다면 next_state, reward, done, _, _ 와 같이 truncated 부분을 무시하면 해결된다. 
 """
 
-env = gym.make('CartPole-v1')
-observation = env.reset()
-action = env.action_space.sample()
-step = env.step(action)
+states = []
 
-print('')
-print('First observation:', observation)
-print('Action:', action)
-print('Step:', step)
+env = gym.make('CartPole-v1', render_mode="rgb_array")
+
+for i_episode in range(20): # episode 정의
+    observation = env.reset()                   # First observation
+
+    for t in range(100):                        # For 100 time steps
+        state = env.render()
+        state
+        
+        print(observation) 
+        action = env.action_space.sample()      # Take a random action
+        observation, reward, terminated, truncated, info = env.step(action)
+    
+        if (terminated or truncated):                                # Finish the episode if done
+            print('Episode finished after {} timesteps'.format(t+1))
+            break
+        
+        states.append(state)
+    
+# image to gif
+save_gif(states, f'./gif/example_2.gif')
+
+env.close()
+
+
+"action + environment (reward) + 20 episode"
+
+"20 번의 각 episode 마다 100 번씩 action - reward 가 반복된다. (설명할 때 수식을 더하면 좋을 듯)"
