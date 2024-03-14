@@ -13,7 +13,7 @@ from gym import spaces
 env = gym.make('CartPole-v1', render_mode="rgb_array")
 
 print(env.action_space) # 고정된 범위, 음이 아닌 숫자, 지금의 경우 0 or 1
-print(env.observation_space) 
+print(env.observation_space)
 
 print(env.observation_space.high) # 해석 - -4.8  ~ 4.8 카트는 범위에서 움직일 수 있고, 막대기의 각도는 약 -0.419 ~ 0.419 의 범위에서 움직일 수 있다. 
 print(env.observation_space.low) 

@@ -18,7 +18,7 @@ for _ in range(100):
     
     action = env.action_space.sample() # Take a random action # 0 or 1 
     env.step(action) # forward to env 
-    
+        
     states.append(state)  # for visuliazation
     
 # image to gif
