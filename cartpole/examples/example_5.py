@@ -40,5 +40,3 @@ save_gif(states, f'./gif/example_5.gif')
 env.close()
 
 "어쨌든 처음보다는 나아졌다."
-
-"과제 - 어떤 식으로든 알고리즘1 을 바꿔서 뭔가 하기"

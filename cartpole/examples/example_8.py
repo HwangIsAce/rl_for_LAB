@@ -59,11 +59,13 @@ for i in range(1000):
         
     # Training
 
-    
     if i > 10:
+        
         minibatch = random.sample(memory, 16)
 
         for state, action, reward, next_state, done in minibatch:
+            model.train()
+            
             target = reward
             if not done:
                 target = reward + 0.9 * np.amax((model(torch.tensor(next_state))[0]).detach().numpy())
@@ -84,7 +86,6 @@ for i in range(1000):
 env.close()
 print(score)
 
-"tensor 코드를 torch 코드로 바꾸느라 조금 어색함. -> 에폭 설정"
-"코드 의미 찾기"
 
-"과제 - 모델을 수정하든 학습 알고리즘을 수정하든 모델 score 증가시키기"
+"어떻게 해야 문제를 해결할 수 있을지 discussion 하기"
+

@@ -4,7 +4,7 @@ from utils import *
 """
 다시 본론으로 돌아가서, 더 action 을 잘 할 수 있을까? 
 
-그러면 action = 0, 1 을 취했을 때 어떤 일이 일어날 지부터 생각해보자. 
+그러면 action = 0 or 1 을 취했을 때 어떤 일이 일어날 지부터 생각해보자. 
 """
 
 # 행동 0
@@ -59,7 +59,6 @@ env.reset()
 for i in range(10):
     state2 = env.render()
     
-    
     observation, reward, done, _, _ = env.step(1)
     print(observation, done)
     
@@ -67,7 +66,7 @@ for i in range(10):
         print(f'radian: {observation[2]}, degree: {math.degrees(observation[2])}') # radian -> 각도 표기법 # done (terminated, truncated) 이 True 가 될 때, 막대기의 각도가 12도보다 커지기 때문에 종료 조건 만족
         break
     
-    states_2.append(screen2)
+    states_2.append(states_2)
     
 save_gif(states_2, f'./gif/example_4_(2).gif')
     

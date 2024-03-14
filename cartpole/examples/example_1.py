@@ -16,8 +16,8 @@ for _ in range(100):
     state = env.render() # image render
     state
     
-    action = env.action_space.sample() # Take a random action # 0 or 1
-    env.step(action) # env update 
+    action = env.action_space.sample() # Take a random action # 0 or 1 
+    env.step(action) # forward to env 
     
     states.append(state)  # for visuliazation
     
@@ -27,5 +27,5 @@ save_gif(states, f'./gif/example_1.gif')
 env.close()
 
 
-"only action"
+"env definition, random action"
 

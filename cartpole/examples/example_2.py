@@ -27,9 +27,9 @@ states = []
 env = gym.make('CartPole-v1', render_mode="rgb_array")
 
 for i_episode in range(20): # episode 정의
-    observation = env.reset()                   # First observation
+    observation = env.reset()                   # env reset
 
-    for t in range(100):                        # For 100 time steps
+    for t in range(100):                        
         state = env.render()
         state
         
@@ -49,6 +49,6 @@ save_gif(states, f'./gif/example_2.gif')
 env.close()
 
 
-"action + environment (reward) + 20 episode"
+"action, environment (reward), 20 episode"
 
-"20 번의 각 episode 마다 100 번씩 action - reward 가 반복된다. (설명할 때 수식을 더하면 좋을 듯)"
+"20 번의 각 episode 마다 100 번씩 action - reward 가 반복된다."

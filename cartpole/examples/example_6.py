@@ -18,8 +18,8 @@ class NNModel(nn.Module):
         self,
     ):
         super().__init__()
-        self.fc1 = nn.Linear(in_features=4, out_features=3, bias=True)
-        self.fc2 = nn.Linear(in_features=3, out_features=2, bias=True)
+        self.fc1 = nn.Linear(in_features=4, out_features=24, bias=True)
+        self.fc2 = nn.Linear(in_features=24, out_features=2, bias=True)
         self.activation = nn.ReLU(inplace=True)
         
     def forward(self, x):
@@ -66,4 +66,4 @@ plt.show()
 
 "질문 - 현재 모델의 상태는?"
 
-"과제 - 모델 수정하기"
+"과제2 (1명) - 모델 수정하기"

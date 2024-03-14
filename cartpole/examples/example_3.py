@@ -6,6 +6,8 @@ from gym import spaces
 이전의 예제에서 CartPole 게임 환경에서 주어지는 행동 공간 (action space)에서 "임의의" 행동을 선택했다. 모든 환경은 action_space와 observation_space를 가진다.
 
 이러한 속성들은 공간의 한 유형이며, 유효한 행동과 관찰의 형식을 보여준다.
+
+더 나은 행동을 취하기 위해서, env 와 action 에 대해서 살펴보자.
 """
 
 env = gym.make('CartPole-v1', render_mode="rgb_array")
