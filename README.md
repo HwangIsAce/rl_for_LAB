@@ -1,7 +1,8 @@
-## 
-3/11/24 - 연구실 스터디 (강화학습)
 
-레퍼런스 : https://codetorial.net/articles/cartpole/index.html
+** Overview
+On March 11, 2024, we conducted an internal study session on Reinforcement Learning (RL) in our lab. I led the Reinforcement Learning part of the study, providing an in-depth explanation of key concepts and hands-on implementation. This session aimed to deepen our understanding of RL principles and their applications.
 
-비고
-1. /example - 단계별 예제
+- Date: March 11, 2024  
+- Topic: Reinforcement Learning Practice
+- Reference Material: https://codetorial.net/articles/cartpole/index.html  
+- My role: Leader  
